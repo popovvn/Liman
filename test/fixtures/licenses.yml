@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lictype: MyString
+  licaccount: MyString
+  licdate: 2020-08-14 16:25:09
+  comment: MyText
+
+two:
+  lictype: MyString
+  licaccount: MyString
+  licdate: 2020-08-14 16:25:09
+  comment: MyText
