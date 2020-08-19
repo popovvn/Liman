@@ -68,13 +68,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'activeadmin'
 
-<<<<<<< HEAD
-group :development do
-  gem 'capistrano'
-  gem 'capistrano-rails'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rvm'
-end
-=======
-
->>>>>>> ver1

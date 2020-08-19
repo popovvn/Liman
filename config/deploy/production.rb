@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> ver1
 server '89.223.24.167', user: 'root', roles: %w{app db web}
 
 set :application, "liman"
