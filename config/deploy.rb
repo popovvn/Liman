@@ -2,7 +2,7 @@
 #lock "~> 3.10.1"
 
 set :application, "liman"
-set :repo_url, "git@github.com:popovvn/Liman.git"
+set :repo_url, "git@github.com:popovvn/Liman/tree/ver1.git"
 
 # Default branch is :master
 ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
