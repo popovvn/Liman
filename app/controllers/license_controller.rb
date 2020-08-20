@@ -6,7 +6,7 @@ class LicenseController < ApplicationController
     else
       ret = 'not exist'
     end
-    render text: ret
-    #render json: ret
+    #render text: ret
+    render json: ret
   end
 end
