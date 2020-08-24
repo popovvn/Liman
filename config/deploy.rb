@@ -16,7 +16,7 @@ set :default_shell, "/bin/bash -l"
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
-set :migration_role, :app
+#set :migration_role, :app
 
 # Don't change these unless you know what you're doing
 set :pty,             true
@@ -76,7 +76,7 @@ namespace :deploy do
   # end
   #
   # after "bundler:install", "deploy:create_symlinks"
-  after "bundler:install", "deploy:migrate"
+  #after "bundler:install", "deploy:migrate"
 
   desc 'Initial Deploy'
   task :initial do
