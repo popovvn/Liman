@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
   passw = ""
   if :admin_controller?
-    adminuser = Adminuser.first;
-    passw = AES.decrypt(adminuser.h_passw, adminuser.salt);
+    adminuser = Adminuser.first
+    passw = AES.decrypt(adminuser.h_passw, adminuser.salt)
   end
   http_basic_authenticate_with :name => "Admin", :password => passw, :if => :admin_controller?
 
