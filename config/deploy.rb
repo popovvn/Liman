@@ -75,8 +75,8 @@ namespace :deploy do
     end
   end
 
-  after "deploy:check_revision", "deploy:create_symlinks"
-  after "deploy:check_revision", "deploy:migrate"
+  after "git:create_release", "deploy:create_symlinks"
+  after "git:create_release", "deploy:migrate"
 
   desc 'Initial Deploy'
   task :initial do
