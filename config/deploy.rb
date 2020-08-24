@@ -73,8 +73,8 @@ namespace :deploy do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   end
 
-  after "deploy:finalize_update", "deploy:create_symlinks"
-  after "deploy:finalize_update", "deploy:migrate"
+  after "deploy:check_revision", "deploy:create_symlinks"
+  after "deploy:check_revision", "deploy:migrate"
 
   desc 'Initial Deploy'
   task :initial do
