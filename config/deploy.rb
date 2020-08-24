@@ -73,7 +73,7 @@ namespace :deploy do
     on roles(:app) do
       before 'deploy:restart', 'puma:start'
       invoke 'deploy'
-      invoke 'deploy:migrate'
+      #invoke 'deploy:migrate'
     end
   end
 
