@@ -1,15 +1,15 @@
 class ApplicationController < ActionController::Base
-  http_basic_authenticate_with :name => "Admin", :password => :get_passw, :if => :admin_controller?
+  before_action :authenticate
 
   def admin_controller?
     self.class < ActiveAdmin::BaseController
   end
 
-  def get_passw
-    passw = ""
-    if :admin_controller?
-      adminuser = Adminuser.first
-      passw = AES.decrypt(adminuser.h_passw, adminuser.salt)
+  def authenticate
+    if admin_controller?
+      authenticate_or_request_with_http_basic do |user,pass|
+        user == "Admin" && pass == "secret"
+      end
     end
   end
 end
