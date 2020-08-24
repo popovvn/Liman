@@ -68,12 +68,15 @@ namespace :deploy do
     end
   end
 
+  task :migrate do
+    invoke 'deploy:migrate'
+  end
+
   desc 'Initial Deploy'
   task :initial do
     on roles(:app) do
       before 'deploy:restart', 'puma:start'
       invoke 'deploy'
-      #invoke 'deploy:migrate'
     end
   end
 
