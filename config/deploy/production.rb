@@ -4,4 +4,4 @@ set :application, "liman"
 set :deploy_to, -> { "/srv/#{fetch(:application)}" }
 set :rails_env, "production"
 set :rvm_custom_path, '/usr/local/rvm'
-append :linked_files, %w{db/production.sqlite3 config/database.yml}
+set :linked_files, %w{db/production.sqlite3 config/database.yml}
