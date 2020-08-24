@@ -8,6 +8,7 @@ require 'capistrano/rails'
 require 'capistrano/bundler'
 require 'capistrano/rvm'
 require 'capistrano/puma'
+require "capistrano/rails/migrations"
 
 install_plugin Capistrano::Puma
 
