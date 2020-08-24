@@ -69,8 +69,10 @@ namespace :deploy do
   end
 
   task :create_symlinks do
-    execute "ln -nfs #{shared_path}/db/production.sqlite3 #{release_path}/db/production.sqlite3"
-    execute "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    on roles(:app) do
+      execute "ln -nfs #{shared_path}/db/production.sqlite3 #{release_path}/db/production.sqlite3"
+      execute "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    end
   end
 
   after "deploy:check_revision", "deploy:create_symlinks"
