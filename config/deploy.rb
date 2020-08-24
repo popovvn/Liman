@@ -68,9 +68,13 @@ namespace :deploy do
     end
   end
 
-  task :migrate do
-    invoke 'deploy:migrate'
+  task :create_symlinks do
+    run "ln -nfs #{shared_path}/db/production.sqlite3 #{release_path}/db/production.sqlite3"
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   end
+
+  after "deploy:finalize_update", "deploy:create_symlinks"
+  after "deploy:finalize_update", "deploy:migrate"
 
   desc 'Initial Deploy'
   task :initial do
