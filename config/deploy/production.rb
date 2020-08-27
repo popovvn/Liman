@@ -1,4 +1,4 @@
-server '89.223.24.167', user: 'root', roles: %w{app db web}
+server '45.87.0.111', user: 'root', roles: %w{app db web}
 
 set :application, "liman"
 set :deploy_to, -> { "/srv/#{fetch(:application)}" }
