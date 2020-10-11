@@ -1,0 +1,2 @@
+class Lictype < ApplicationRecord
+end

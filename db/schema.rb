@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_23_160603) do
+ActiveRecord::Schema.define(version: 2020_08_29_065937) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -41,6 +41,12 @@ ActiveRecord::Schema.define(version: 2020_08_23_160603) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lictype", "licaccount"], name: "index_licenses_on_lictype_and_licaccount", unique: true
+  end
+
+  create_table "lictypes", force: :cascade do |t|
+    t.string "typename"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -14,4 +14,15 @@ ActiveAdmin.register License do
       end
     end
   end
+
+  form do |f|
+    f.inputs do
+      f.input :lictype, label: "Тип лицензии", as: :select, collection: Lictype.all.collect { |p|  p.typename  }
+      f.input :licaccount, label: "Торговый счет"
+      f.input :licdate, label: "Дата окончания лицензии"
+      f.input :comment, label: "Примечание"
+      f.actions
+    end
+  end
+
 end
